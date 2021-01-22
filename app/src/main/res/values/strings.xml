@@ -3,5 +3,11 @@
     <string name="op1Hint">Enter 1st Non Negative Decimal Number</string>
     <string name="op2Hint">Enter 2nd Non Negative Decimal Number</string>
     <string name="ResultLabel">RESULT</string>
+    <string name="opPlus">+</string>
+    <string name="opMinus">-</string>
+    <string name="opMultiplication">X</string>
+    <string name="opDivision">/</string>
+    <string name="opPercent">%</string>
+    <string name="opSQRT">√</string>
 
 </resources>

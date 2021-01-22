@@ -65,6 +65,74 @@
         app:layout_constraintHorizontal_bias="0.07"
         />
 
+    <Button
+        android:id="@+id/btnOpPlus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opPlus"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpMinus"
+        android:onClick="doAddition"
+        />
+
+    <Button
+        android:id="@+id/btnOpMinus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opMinus"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpMultiplication"
+        android:onClick="doSubstract"
+        />
+
+    <Button
+        android:id="@+id/btnOpMultiplication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opMultiplication"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpDivision"
+        android:onClick="doMultiplication"
+        />
+
+    <Button
+        android:id="@+id/btnOpDivision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opDivision"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpPercent"
+        android:onClick="doDivision"
+        />
+
+    <Button
+        android:id="@+id/btnOpPercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opPercent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpSQRT"
+        android:onClick="doPercent"
+        />
+
+
+    <Button
+        android:id="@+id/btnOpSQRT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/opSQRT"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.97"
+        android:onClick="doSQRT"
+        />
 
 
 
