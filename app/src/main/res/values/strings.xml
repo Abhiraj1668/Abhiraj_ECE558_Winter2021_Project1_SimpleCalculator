@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Abhiraj_Project1</string>
+    <string name="op1Hint">Enter 1st Non Negative Decimal Number</string>
+    <string name="op2Hint">Enter 2nd Non Negative Decimal Number</string>
+    <string name="ResultLabel">RESULT</string>
+
+</resources>
