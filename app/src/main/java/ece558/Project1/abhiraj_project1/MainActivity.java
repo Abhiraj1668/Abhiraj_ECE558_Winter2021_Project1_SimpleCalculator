@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -18,51 +19,80 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void doAddition(View view){
+
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Double.parseDouble(op1.getText().toString())+Double.parseDouble(op2.getText().toString());
-        Result.setText(Double.toString(res));
+        try {
+            Double res = Double.parseDouble(op1.getText().toString())+Double.parseDouble(op2.getText().toString());
+            Result.setText(Double.toString(res));
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void doSubstract(View view){
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Double.parseDouble(op1.getText().toString())-Double.parseDouble(op2.getText().toString());
-        Result.setText(Double.toString(res));
+        try {
+            Double res = Double.parseDouble(op1.getText().toString())-Double.parseDouble(op2.getText().toString());
+            Result.setText(Double.toString(res));
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void doMultiplication(View view){
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Double.parseDouble(op1.getText().toString())*Double.parseDouble(op2.getText().toString());
-        Result.setText(Double.toString(res));
+        try {
+            Double res = Double.parseDouble(op1.getText().toString())*Double.parseDouble(op2.getText().toString());
+            Result.setText(Double.toString(res));
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void doDivision(View view){
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Double.parseDouble(op1.getText().toString())/Double.parseDouble(op2.getText().toString());
-        Result.setText(Double.toString(res));
+        try {
+            if (Double.parseDouble(op2.getText().toString()) != 0) {
+                Double res = Double.parseDouble(op1.getText().toString()) / Double.parseDouble(op2.getText().toString());
+                Result.setText(Double.toString(res));
+            }
+            else
+                Toast.makeText(this, "ERROR: Number Cannot be Divided by Zero", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void doPercent(View view){
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Double.parseDouble(op1.getText().toString())/100.00;
-        Result.setText(Double.toString(res));
+        try {
+            Double res = Double.parseDouble(op1.getText().toString())/100.00;
+            Result.setText(Double.toString(res));
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void doSQRT(View view){
         EditText op1 = findViewById(R.id.editText_op1);
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
-        Double res = Math.sqrt(Double.parseDouble(op1.getText().toString()));
-        Result.setText(Double.toString(res));
-
+        try {
+            Double res = Math.sqrt(Double.parseDouble(op1.getText().toString()));
+            Result.setText(Double.toString(res));
+        } catch (Exception e) {
+            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }
