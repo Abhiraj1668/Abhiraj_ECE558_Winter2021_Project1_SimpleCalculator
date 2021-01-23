@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
@@ -40,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
@@ -64,10 +70,15 @@ public class MainActivity extends AppCompatActivity {
                 Double res = Double.parseDouble(op1.getText().toString()) / Double.parseDouble(op2.getText().toString());
                 Result.setText(Double.toString(res));
             }
-            else
+            else {
                 Toast.makeText(this, "ERROR: Number Cannot be Divided by Zero", Toast.LENGTH_SHORT).show();
+                op1.getText().clear();
+                op2.getText().clear();
+            }
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
@@ -80,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
@@ -92,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+            op1.getText().clear();
+            op2.getText().clear();
         }
     }
 
