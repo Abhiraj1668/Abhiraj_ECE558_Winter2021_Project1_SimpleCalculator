@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+<!--    This Interface takes user input for 1st operand-->
+<!--    Set the id to be referenced in main activity-->
+<!--    Set width same as the screen width-->
+<!--    Set height to match its contents height-->
+<!--    Hint for user to enter value in the fields-->
+<!--    Set input type to only decimal numbers-->
+<!--    Align hint and input text to center-->
+<!--    Added Constraints to set the position of the field-->
+<!--    Added bias to the constraints to set position relative to individual device screen-->
     <EditText
         android:id="@+id/editText_op1"
         android:layout_width="match_parent"
@@ -18,8 +27,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0085"
-        tools:layout_editor_absoluteX="0dp" />
+        />
 
+<!--    This Interface takes user input for 2st operand-->
+<!--    Add constraints to position it below 1st operand field with some space in between-->
     <EditText
         android:id="@+id/editText_op2"
         android:layout_width="match_parent"
@@ -32,8 +43,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_op1"
         app:layout_constraintVertical_bias="0.005"
-        tools:layout_editor_absoluteX="0dp" />
+        />
 
+<!--    Text view to Show Tag Result to the user-->
+<!--    Show this tag fairly below the 2nd input and above enough to the Addition button-->
+<!--    Also keep enough distance from left edge of the screen-->
     <TextView
         android:id="@+id/ResultLabel"
         android:layout_width="wrap_content"
@@ -42,13 +56,15 @@
         android:text="@string/ResultLabel"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/editText_op2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.30"
+        app:layout_constraintTop_toBottomOf="@+id/editText_op2"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpPlus"
+        app:layout_constraintVertical_bias="0.60"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.05" />
-    
+
+<!--    Similar to Result Tag, this layout displays the calculated result-->
+<!--    Has same constraints as of Result tag and is positioned to be always below the result tag-->
     <TextView
         android:id="@+id/finalResult"
         android:layout_width="wrap_content"
@@ -57,14 +73,18 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="@android:color/holo_green_dark"
         tools:text="Calculated Value"
-        app:layout_constraintTop_toTopOf="@+id/ResultLabel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.075"
+        app:layout_constraintTop_toBottomOf="@+id/ResultLabel"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpPlus"
+        app:layout_constraintVertical_bias="0.035"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         />
 
+<!--    These buttons are set to stack on each other-->
+<!--    The bottom operation SQRT button is positioned with constraints to be always at the bottom of screen with enough distance-->
+<!--    Rest of the buttons are referenced to top of the button below to stack on each other-->
+<!--    OnClick Methods are referenced for each method and defined in mainactivity java program-->
     <Button
         android:id="@+id/btnOpPlus"
         android:layout_width="match_parent"

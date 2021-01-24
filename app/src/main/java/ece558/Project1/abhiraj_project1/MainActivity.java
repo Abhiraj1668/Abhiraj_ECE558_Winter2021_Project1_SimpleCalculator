@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.NumberFormat;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
         try {
-            Double res = Double.parseDouble(op1.getText().toString())+Double.parseDouble(op2.getText().toString());
+            double res = Double.parseDouble(op1.getText().toString())+Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             this.handleException(op1,op2,Result);
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
         try {
-            Double res = Double.parseDouble(op1.getText().toString())-Double.parseDouble(op2.getText().toString());
+            double res = Double.parseDouble(op1.getText().toString())-Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             this.handleException(op1,op2,Result);
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
         try {
-            Double res = Double.parseDouble(op1.getText().toString())*Double.parseDouble(op2.getText().toString());
+            double res = Double.parseDouble(op1.getText().toString())*Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             this.handleException(op1,op2,Result);
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         TextView Result = findViewById(R.id.finalResult);
         try {
             if (Double.parseDouble(op2.getText().toString()) != 0) {
-                Double res = Double.parseDouble(op1.getText().toString()) / Double.parseDouble(op2.getText().toString());
+                double res = Double.parseDouble(op1.getText().toString()) / Double.parseDouble(op2.getText().toString());
                 Result.setText(Double.toString(res));
             }
             else {
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
         try {
-            Double res = Double.parseDouble(op1.getText().toString())/100.00;
+            double res = Double.parseDouble(op1.getText().toString())/100.00;
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             this.handleException(op1,op2,Result);
@@ -95,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         EditText op2 = findViewById(R.id.editText_op2);
         TextView Result = findViewById(R.id.finalResult);
         try {
-            Double res = Math.sqrt(Double.parseDouble(op1.getText().toString()));
+            double res = Math.sqrt(Double.parseDouble(op1.getText().toString()));
             Result.setText(Double.toString(res));
         } catch (Exception e) {
             this.handleException(op1,op2,Result);
