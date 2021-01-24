@@ -2,8 +2,10 @@ package ece558.Project1.abhiraj_project1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,9 +29,7 @@ public class MainActivity extends AppCompatActivity {
             Double res = Double.parseDouble(op1.getText().toString())+Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
     }
 
@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
             Double res = Double.parseDouble(op1.getText().toString())-Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
     }
 
@@ -55,9 +53,7 @@ public class MainActivity extends AppCompatActivity {
             Double res = Double.parseDouble(op1.getText().toString())*Double.parseDouble(op2.getText().toString());
             Result.setText(Double.toString(res));
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
     }
 
@@ -74,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "ERROR: Number Cannot be Divided by Zero", Toast.LENGTH_SHORT).show();
                 op1.getText().clear();
                 op2.getText().clear();
+                Result.setText("");
+                op1.requestFocus();
             }
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
     }
 
@@ -90,9 +86,7 @@ public class MainActivity extends AppCompatActivity {
             Double res = Double.parseDouble(op1.getText().toString())/100.00;
             Result.setText(Double.toString(res));
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
     }
 
@@ -104,10 +98,18 @@ public class MainActivity extends AppCompatActivity {
             Double res = Math.sqrt(Double.parseDouble(op1.getText().toString()));
             Result.setText(Double.toString(res));
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
-            op1.getText().clear();
-            op2.getText().clear();
+            this.handleException(op1,op2,Result);
         }
+    }
+
+    public void handleException(EditText op1, EditText op2, TextView Result){
+        Toast.makeText(this, "ERROR: Enter New operand value(s)", Toast.LENGTH_SHORT).show();
+        op1.getText().clear();
+        op2.getText().clear();
+        Result.setText("");
+        op1.requestFocus();
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(op1, InputMethodManager.SHOW_IMPLICIT);
     }
 
 }
