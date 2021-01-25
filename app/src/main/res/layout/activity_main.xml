@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    This Interface takes user input for 1st operand-->
-<!--    Set the id to be referenced in main activity-->
-<!--    Set width same as the screen width-->
-<!--    Set height to match its contents height-->
-<!--    Hint for user to enter value in the fields-->
-<!--    Set input type to only decimal numbers-->
-<!--    Align hint and input text to center-->
-<!--    Added Constraints to set the position of the field-->
-<!--    Added bias to the constraints to set position relative to individual device screen-->
+    <!--    This Interface takes user input for 1st operand-->
+    <!--    Set the id to be referenced in main activity-->
+    <!--    Set width same as the screen width-->
+    <!--    Set height to match its contents height-->
+    <!--    Hint for user to enter value in the fields-->
+    <!--    Set input type to only decimal numbers-->
+    <!--    Align hint and input text to center-->
+    <!--    Added Constraints to set the position of the field-->
+    <!--    Added bias to the constraints to set position relative to individual device screen-->
     <EditText
         android:id="@+id/editText_op1"
         android:layout_width="match_parent"
@@ -26,11 +26,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0085"
-        />
+        app:layout_constraintVertical_bias="0.0085" />
 
-<!--    This Interface takes user input for 2st operand-->
-<!--    Add constraints to position it below 1st operand field with some space in between-->
+    <!--    This Interface takes user input for 2st operand-->
+    <!--    Add constraints to position it below 1st operand field with some space in between-->
     <EditText
         android:id="@+id/editText_op2"
         android:layout_width="match_parent"
@@ -42,12 +41,11 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_op1"
-        app:layout_constraintVertical_bias="0.005"
-        />
+        app:layout_constraintVertical_bias="0.005" />
 
-<!--    Text view to Show Tag Result to the user-->
-<!--    Show this tag fairly below the 2nd input and above enough to the Addition button-->
-<!--    Also keep enough distance from left edge of the screen-->
+    <!--    Text view to Show Tag Result to the user-->
+    <!--    Show this tag fairly below the 2nd input and above enough to the Addition button-->
+    <!--    Also keep enough distance from left edge of the screen-->
     <TextView
         android:id="@+id/ResultLabel"
         android:layout_width="wrap_content"
@@ -56,15 +54,15 @@
         android:text="@string/ResultLabel"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/editText_op2"
         app:layout_constraintBottom_toTopOf="@+id/btnOpPlus"
-        app:layout_constraintVertical_bias="0.60"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.05" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_op2"
+        app:layout_constraintVertical_bias="0.60" />
 
-<!--    Similar to Result Tag, this layout displays the calculated result-->
-<!--    Has same constraints as of Result tag and is positioned to be always below the result tag-->
+    <!--    Similar to Result Tag, this layout displays the calculated result-->
+    <!--    Has same constraints as of Result tag and is positioned to be always below the result tag-->
     <TextView
         android:id="@+id/finalResult"
         android:layout_width="wrap_content"
@@ -72,73 +70,67 @@
         android:layout_weight="1"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textColor="@android:color/holo_green_dark"
-        tools:text="Calculated Value"
-        app:layout_constraintTop_toBottomOf="@+id/ResultLabel"
         app:layout_constraintBottom_toTopOf="@+id/btnOpPlus"
-        app:layout_constraintVertical_bias="0.035"
+        app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/ResultLabel"
+        app:layout_constraintVertical_bias="0.035"
+        tools:text="Calculated Value" />
 
-<!--    These buttons are set to stack on each other-->
-<!--    The bottom operation SQRT button is positioned with constraints to be always at the bottom of screen with enough distance-->
-<!--    Rest of the buttons are referenced to top of the button below to stack on each other-->
-<!--    OnClick Methods are referenced for each method and defined in mainactivity java program-->
+    <!--    These buttons are set to stack on each other-->
+    <!--    The bottom operation SQRT button is positioned with constraints to be always at the bottom of screen with enough distance-->
+    <!--    Rest of the buttons are referenced to top of the button below to stack on each other-->
+    <!--    OnClick Methods are referenced for each method and defined in mainactivity java program-->
     <Button
         android:id="@+id/btnOpPlus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doAddition"
         android:text="@string/opPlus"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpMinus"
-        android:onClick="doAddition"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOpMinus" />
 
     <Button
         android:id="@+id/btnOpMinus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doSubtract"
         android:text="@string/opMinus"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpMultiplication"
-        android:onClick="doSubstract"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOpMultiplication" />
 
     <Button
         android:id="@+id/btnOpMultiplication"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doMultiplication"
         android:text="@string/opMultiplication"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpDivision"
-        android:onClick="doMultiplication"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOpDivision" />
 
     <Button
         android:id="@+id/btnOpDivision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doDivision"
         android:text="@string/opDivision"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpPercent"
-        android:onClick="doDivision"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOpPercent" />
 
     <Button
         android:id="@+id/btnOpPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doPercent"
         android:text="@string/opPercent"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpSQRT"
-        android:onClick="doPercent"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/btnOpSQRT" />
 
 
     <Button
@@ -146,12 +138,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:onClick="doSQRT"
         android:text="@string/opSQRT"
         android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.97"
-        android:onClick="doSQRT"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
+
+<!--    This extra button Clears all fields-->
+<!--    It is implemented a little different others-->
+<!--    This layout does not have onClick field set but is implemented in main activity-->
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/btnOpPlus"
+        app:layout_constraintTop_toBottomOf="@id/editText_op2"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintLeft_toRightOf="@id/finalResult"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         />
 
 
