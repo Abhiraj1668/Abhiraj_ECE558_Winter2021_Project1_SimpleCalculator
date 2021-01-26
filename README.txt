@@ -5,3 +5,7 @@ Installation Guide:
 4) Since this app is not published on playstore, it doesnt recognize the sign by author and therefore it prompts again for confirmation. Press Install anyway.
 5) This will install the application on your device.
 6) You can find the installed application in your application menu by the name- "Abhiraj_Project1"
+
+
+Demo Of the Project is present in this same folder by the name Abhiraj_Project1_Demo.mp4
+GitHub repository is also available for this project: https://github.com/Abhiraj1668/Abhiraj_ECE558_Winter2021_Project1_SimpleCalculator.git
